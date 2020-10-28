@@ -181,7 +181,7 @@ resource "aws_s3_bucket" "this" {
 
   # Max 1 block - server_side_encryption_configuration
   dynamic "server_side_encryption_configuration" {
-    for_each = length(keys(var.server_side_encryption_configuration)) == 0 ? [] : [var.server_side_encryption_configuration]
+    for_each = length(keys(jsondecode(var.server_side_encryption_configuration))) == 0 ? [] : [jsondecode(var.server_side_encryption_configuration)]
 
     content {
 

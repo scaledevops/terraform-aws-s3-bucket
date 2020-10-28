@@ -114,8 +114,7 @@ variable "replication_configuration" {
 
 variable "server_side_encryption_configuration" {
   description = "Map containing server-side encryption configuration."
-  type        = any
-  default     = {}
+  type        = string
 }
 
 variable "object_lock_configuration" {
